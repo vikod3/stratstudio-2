@@ -102,7 +102,7 @@ export const HeroSection = () => {
               Meet your new AI <br className="hidden lg:block" /><span className="font-source-serif font-medium italic">Social Media Agency</span>
             </BlurInHeading>
             <p className="max-w-[684px] opacity-90 text-foreground text-lg md:text-xl font-normal leading-8">
-              We collaborate with forward-thinking teams to create unique brands, launch intelligent products, and grow with intention.
+              We partner with ambitious brands to craft viral content, build engaged communities, and scale your social presence with strategy.
             </p>
           </div>
 
