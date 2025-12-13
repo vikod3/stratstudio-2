@@ -115,7 +115,7 @@ export const HeroSection = () => {
 
       <div className="max-w-7xl mx-auto relative">
         {/* Hero Content */}
-        <div className="relative z-20 flex-col text-center gap-7 my-0 flex items-center justify-end py-0 pt-[240px] pb-32">
+        <div className="relative z-20 flex-col text-center gap-7 my-0 flex items-center justify-end py-0 pt-[240px] pb-20">
           {/* Badge */}
           <GlowBadge>AI-powered social media marketing</GlowBadge>
 
@@ -132,7 +132,7 @@ export const HeroSection = () => {
           {/* Email CTA Form */}
           <form 
             onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row items-center gap-0 w-full max-w-md mb-16"
+            className="flex flex-col sm:flex-row items-center gap-0 w-full max-w-md mb-8"
           >
             <div className="flex w-full rounded-2xl overflow-hidden backdrop-blur-md bg-background/10 border border-white/20 shadow-lg">
               <Input
