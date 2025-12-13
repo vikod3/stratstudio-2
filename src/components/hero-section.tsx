@@ -120,7 +120,7 @@ export const HeroSection = () => {
 
       <div className="max-w-7xl mx-auto relative">
         {/* Hero Content */}
-        <div className="relative z-20 flex-col text-center gap-7 my-0 flex items-center justify-end py-0 pt-[240px] pb-20">
+        <div className="relative z-20 flex-col text-center gap-7 my-0 flex items-center justify-end py-0 pt-[300px] pb-20">
           {/* Badge */}
           <GlowBadge>
             <StaggeredFade text="AI-powered social media marketing" />
