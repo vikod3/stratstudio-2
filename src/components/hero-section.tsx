@@ -94,7 +94,7 @@ export const HeroSection = () => {
         {/* Hero Content */}
         <div className="relative z-20 flex-col text-center gap-7 my-0 flex items-center justify-end py-0 pt-[240px]">
           {/* Badge */}
-          <GlowBadge>Design studio for AI, SaaS & Tech</GlowBadge>
+          <GlowBadge>AI-powered social media marketing</GlowBadge>
 
           {/* Heading and Subtext */}
           <div className="flex flex-col items-center gap-4">
