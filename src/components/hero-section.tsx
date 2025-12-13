@@ -115,7 +115,7 @@ export const HeroSection = () => {
 
       <div className="max-w-7xl mx-auto relative">
         {/* Hero Content */}
-        <div className="relative z-20 flex-col text-center gap-7 my-0 flex items-center justify-end py-0 pt-[240px]">
+        <div className="relative z-20 flex-col text-center gap-7 my-0 flex items-center justify-end py-0 pt-[240px] pb-32">
           {/* Badge */}
           <GlowBadge>AI-powered social media marketing</GlowBadge>
 
@@ -132,7 +132,7 @@ export const HeroSection = () => {
           {/* Email CTA Form */}
           <form 
             onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row items-center gap-0 w-full max-w-md"
+            className="flex flex-col sm:flex-row items-center gap-0 w-full max-w-md mb-16"
           >
             <div className="flex w-full rounded-2xl overflow-hidden backdrop-blur-md bg-background/10 border border-white/20 shadow-lg">
               <Input
@@ -155,6 +155,14 @@ export const HeroSection = () => {
           </form>
         </div>
       </div>
+
+      {/* Bottom Fade Effect */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 h-48 z-20 pointer-events-none"
+        style={{
+          background: `linear-gradient(to top, hsl(var(--background)) 0%, transparent 100%)`,
+        }}
+      />
     </section>
   );
 };
