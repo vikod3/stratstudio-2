@@ -99,7 +99,7 @@ export const HeroSection = () => {
           {/* Heading and Subtext */}
           <div className="flex flex-col items-center gap-4">
             <BlurInHeading as="h1" className="max-w-[800px] text-foreground font-medium leading-[0.95] text-[69px]">
-              Meet your new AI <span className="font-source-serif font-medium italic">Social Media Agency</span>
+              Meet your new AI <br className="hidden lg:block" /><span className="font-source-serif font-medium italic">Social Media Agency</span>
             </BlurInHeading>
             <p className="max-w-[684px] opacity-90 text-foreground text-lg md:text-xl font-normal leading-8">
               We collaborate with forward-thinking teams to create unique brands, launch intelligent products, and grow with intention.
