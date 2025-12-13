@@ -40,7 +40,10 @@ export const HeroSection = () => {
   return (
     <section className="relative min-h-screen px-6 md:px-12 lg:px-24 overflow-hidden flex items-center justify-center">
       {/* Background Decorative Layer */}
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
         className="absolute inset-0 w-full h-full pointer-events-none"
         style={{
           perspective: "1200px",
@@ -105,7 +108,7 @@ export const HeroSection = () => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Gradient Overlay */}
       <div
