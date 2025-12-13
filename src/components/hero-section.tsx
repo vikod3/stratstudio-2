@@ -55,11 +55,13 @@ export const HeroSection = () => {
         {/* Image 3 (Back) - spins clockwise */}
         <div className={prefersReducedMotion ? "" : "animate-spin-slow"}>
           <div
-            className="absolute top-1/2 left-1/2"
+            className="absolute left-1/2"
             style={{
               width: "2000px",
               height: "2000px",
-              transform: "translate(-50%, -50%) rotate(279.05deg)",
+              top: "0px",
+              transform: "translateX(-50%) rotate(279.05deg)",
+              transformOrigin: "center center",
               zIndex: 0,
             }}
           >
@@ -74,11 +76,13 @@ export const HeroSection = () => {
         {/* Image 2 (Middle) - spins counter-clockwise */}
         <div className={prefersReducedMotion ? "" : "animate-spin-slow-reverse"}>
           <div
-            className="absolute top-1/2 left-1/2"
+            className="absolute left-1/2"
             style={{
               width: "1000px",
               height: "1000px",
-              transform: "translate(-50%, -50%) rotate(304.42deg)",
+              top: "500px",
+              transform: "translateX(-50%) rotate(304.42deg)",
+              transformOrigin: "center center",
               zIndex: 1,
             }}
           >
@@ -93,11 +97,13 @@ export const HeroSection = () => {
         {/* Image 1 (Front) - spins clockwise */}
         <div className={prefersReducedMotion ? "" : "animate-spin-slow"}>
           <div
-            className="absolute top-1/2 left-1/2"
+            className="absolute left-1/2"
             style={{
               width: "800px",
               height: "800px",
-              transform: "translate(-50%, -50%) rotate(48.33deg)",
+              top: "600px",
+              transform: "translateX(-50%) rotate(48.33deg)",
+              transformOrigin: "center center",
               zIndex: 2,
             }}
           >
