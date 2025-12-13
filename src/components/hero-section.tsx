@@ -1,36 +1,93 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
-import Hls from "hls.js";
 import { Button } from "@/components/ui/button";
 import { GlowBadge } from "@/components/glow-badge";
 import { BlurInHeading } from "@/components/blur-in-heading";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
-const HLS_VIDEO_URL = "https://customer-cbeadsgr09pnsezs.cloudflarestream.com/3dd32fd909c65a8d1218e727da59f1d2/manifest/video.m3u8";
+
+import img1 from "@/assets/hero-bg/img-1.avif";
+import img2 from "@/assets/hero-bg/img-2.avif";
+import img3 from "@/assets/hero-bg/img-3.avif";
+
 export const HeroSection = () => {
   const prefersReducedMotion = useReducedMotion();
-  const videoRef = useRef<HTMLVideoElement>(null);
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video || prefersReducedMotion) return;
-    if (Hls.isSupported()) {
-      const hls = new Hls();
-      hls.loadSource(HLS_VIDEO_URL);
-      hls.attachMedia(video);
-      return () => hls.destroy();
-    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-      video.src = HLS_VIDEO_URL;
-    }
-  }, [prefersReducedMotion]);
-  return <section className="relative min-h-screen px-6 md:px-12 lg:px-24 overflow-hidden flex items-center justify-center">
-      {/* Background Video */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        {prefersReducedMotion ? <div className="absolute inset-0 bg-gradient-to-b from-muted/20 to-background" /> : <video ref={videoRef} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover grayscale" />}
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-background/60" />
-        {/* Bottom Fade Overlay */}
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+
+  return (
+    <section className="relative min-h-screen px-6 md:px-12 lg:px-24 overflow-hidden flex items-center justify-center">
+      {/* Background Decorative Layer */}
+      <div
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        style={{
+          perspective: "1200px",
+          transform: "perspective(1200px) rotateX(15deg)",
+          transformOrigin: "center bottom",
+        }}
+      >
+        {/* Image 3 (Back) - spins clockwise */}
+        <div className={prefersReducedMotion ? "" : "animate-spin-slow"}>
+          <div
+            className="absolute top-1/2 left-1/2"
+            style={{
+              width: "2000px",
+              height: "2000px",
+              transform: "translate(-50%, -50%) rotate(279.05deg)",
+              zIndex: 0,
+            }}
+          >
+            <img
+              src={img3}
+              alt=""
+              className="w-full h-full object-cover opacity-50"
+            />
+          </div>
+        </div>
+
+        {/* Image 2 (Middle) - spins counter-clockwise */}
+        <div className={prefersReducedMotion ? "" : "animate-spin-slow-reverse"}>
+          <div
+            className="absolute top-1/2 left-1/2"
+            style={{
+              width: "1000px",
+              height: "1000px",
+              transform: "translate(-50%, -50%) rotate(304.42deg)",
+              zIndex: 1,
+            }}
+          >
+            <img
+              src={img2}
+              alt=""
+              className="w-full h-full object-cover opacity-60"
+            />
+          </div>
+        </div>
+
+        {/* Image 1 (Front) - spins clockwise */}
+        <div className={prefersReducedMotion ? "" : "animate-spin-slow"}>
+          <div
+            className="absolute top-1/2 left-1/2"
+            style={{
+              width: "800px",
+              height: "800px",
+              transform: "translate(-50%, -50%) rotate(48.33deg)",
+              zIndex: 2,
+            }}
+          >
+            <img
+              src={img1}
+              alt=""
+              className="w-full h-full object-cover opacity-80"
+            />
+          </div>
+        </div>
       </div>
+
+      {/* Gradient Overlay */}
+      <div
+        className="absolute inset-0 z-10 pointer-events-none"
+        style={{
+          background: `linear-gradient(to top, hsl(var(--background)) 10%, hsl(var(--background) / 0.8) 40%, transparent 100%)`,
+        }}
+      />
 
       <div className="max-w-7xl mx-auto relative">
         {/* Hero Content */}
@@ -57,5 +114,6 @@ export const HeroSection = () => {
           </Link>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
