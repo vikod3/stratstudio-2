@@ -130,7 +130,7 @@ export const HeroSection = () => {
           <div className="flex flex-col items-center gap-4">
             <BlurInHeading as="h1" className="max-w-[800px] text-foreground font-medium leading-none text-[69px]">
                Meet your new AI <br className="hidden lg:block" />
-               <span className="block font-source-serif font-medium italic -mt-3">Social Media Agency</span>
+               <span className="block font-source-serif font-medium italic -mt-6">Social Media Agency</span>
              </BlurInHeading>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
