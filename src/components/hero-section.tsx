@@ -49,17 +49,17 @@ export const HeroSection = () => {
           perspective: "1200px",
           transform: "perspective(1200px) rotateX(15deg)",
           transformOrigin: "center bottom",
+          top: "20%",
         }}
       >
-        {/* Image 3 (Back/Outermost) - starts from below navbar */}
+        {/* Image 3 (Back) - spins clockwise */}
         <div className={prefersReducedMotion ? "" : "animate-spin-slow"}>
           <div
-            className="absolute left-1/2"
+            className="absolute top-1/2 left-1/2"
             style={{
               width: "2000px",
               height: "2000px",
-              top: "80px",
-              transform: "translateX(-50%) rotate(279.05deg)",
+              transform: "translate(-50%, -50%) rotate(279.05deg)",
               zIndex: 0,
             }}
           >
@@ -71,15 +71,14 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        {/* Image 2 (Middle) - positioned relative to outer */}
+        {/* Image 2 (Middle) - spins counter-clockwise */}
         <div className={prefersReducedMotion ? "" : "animate-spin-slow-reverse"}>
           <div
-            className="absolute left-1/2"
+            className="absolute top-1/2 left-1/2"
             style={{
               width: "1000px",
               height: "1000px",
-              top: "580px",
-              transform: "translateX(-50%) rotate(304.42deg)",
+              transform: "translate(-50%, -50%) rotate(304.42deg)",
               zIndex: 1,
             }}
           >
@@ -91,15 +90,14 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        {/* Image 1 (Front/Innermost) - positioned relative to middle */}
+        {/* Image 1 (Front) - spins clockwise */}
         <div className={prefersReducedMotion ? "" : "animate-spin-slow"}>
           <div
-            className="absolute left-1/2"
+            className="absolute top-1/2 left-1/2"
             style={{
               width: "800px",
               height: "800px",
-              top: "680px",
-              transform: "translateX(-50%) rotate(48.33deg)",
+              transform: "translate(-50%, -50%) rotate(48.33deg)",
               zIndex: 2,
             }}
           >
