@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { GlowBadge } from "@/components/glow-badge";
 import { BlurInHeading } from "@/components/blur-in-heading";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { useToast } from "@/hooks/use-toast";
 
 import img1 from "@/assets/hero-bg/img-1.avif";
 import img2 from "@/assets/hero-bg/img-2.avif";
@@ -11,6 +13,27 @@ import img3 from "@/assets/hero-bg/img-3.avif";
 
 export const HeroSection = () => {
   const prefersReducedMotion = useReducedMotion();
+  const [email, setEmail] = useState("");
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    toast({
+      title: "Request submitted!",
+      description: "We'll send your free audit to " + email,
+    });
+    setEmail("");
+  };
 
   return (
     <section className="relative min-h-screen px-6 md:px-12 lg:px-24 overflow-hidden flex items-center justify-center">
@@ -106,13 +129,30 @@ export const HeroSection = () => {
             </p>
           </div>
 
-          {/* CTA Button */}
-          <Link to="/contact">
-            <Button variant="glass" size="lg" className="h-14 px-8 py-4 rounded-2xl text-lg">
-              Schedule a 1:1 Meeting
-              <ArrowRight className="w-6 h-6" />
-            </Button>
-          </Link>
+          {/* Email CTA Form */}
+          <form 
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row items-center gap-0 w-full max-w-md"
+          >
+            <div className="flex w-full rounded-2xl overflow-hidden backdrop-blur-md bg-background/10 border border-white/20 shadow-lg">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 h-14 px-6 bg-transparent border-0 text-foreground placeholder:text-foreground/50 focus-visible:ring-0 focus-visible:ring-offset-0 rounded-none"
+              />
+              <Button 
+                type="submit" 
+                variant="glass" 
+                size="lg" 
+                className="h-14 px-6 rounded-none rounded-r-2xl text-base shrink-0"
+              >
+                Get Free Audit
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
