@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { GlowBadge } from "@/components/glow-badge";
+import { StaggeredFade } from "@/components/staggered-fade";
 import { BlurInHeading } from "@/components/blur-in-heading";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { useToast } from "@/hooks/use-toast";
@@ -117,7 +118,9 @@ export const HeroSection = () => {
         {/* Hero Content */}
         <div className="relative z-20 flex-col text-center gap-7 my-0 flex items-center justify-end py-0 pt-[240px] pb-20">
           {/* Badge */}
-          <GlowBadge>AI-powered social media marketing</GlowBadge>
+          <GlowBadge>
+            <StaggeredFade text="AI-powered social media marketing" />
+          </GlowBadge>
 
           {/* Heading and Subtext */}
           <div className="flex flex-col items-center gap-4">
