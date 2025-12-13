@@ -128,7 +128,7 @@ export const HeroSection = () => {
 
           {/* Heading and Subtext */}
           <div className="flex flex-col items-center gap-4">
-            <BlurInHeading as="h1" className="max-w-[800px] text-foreground leading-[0.95] text-[76px]">
+            <BlurInHeading as="h1" className="max-w-[800px] text-foreground leading-[0.5] text-[76px]">
               <span className="font-inter-display font-medium">Meet your new AI</span> <br className="hidden lg:block" /><span className="font-source-serif font-medium italic text-[76px]">Social Media Agency</span>
             </BlurInHeading>
             <motion.p 
