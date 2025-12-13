@@ -21,6 +21,7 @@ export const HeroSection = () => {
           perspective: "1200px",
           transform: "perspective(1200px) rotateX(15deg)",
           transformOrigin: "center bottom",
+          top: "30%",
         }}
       >
         {/* Image 3 (Back) - spins clockwise */}
