@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { GlowBadge } from "@/components/glow-badge";
@@ -127,13 +128,21 @@ export const HeroSection = () => {
             <BlurInHeading as="h1" className="max-w-[800px] text-foreground font-medium leading-[0.95] text-[69px]">
               Meet your new AI <br className="hidden lg:block" /><span className="font-source-serif font-medium italic">Social Media Agency</span>
             </BlurInHeading>
-            <p className="max-w-[684px] opacity-90 text-foreground text-lg md:text-xl font-normal leading-8">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 0.9, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+              className="max-w-[684px] text-foreground text-lg md:text-xl font-normal leading-8"
+            >
               We partner with ambitious brands to craft viral content, build engaged communities, and scale your social presence with strategy.
-            </p>
+            </motion.p>
           </div>
 
           {/* Email CTA Form */}
-          <form 
+          <motion.form 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
             onSubmit={handleSubmit}
             className="flex flex-col sm:flex-row items-center gap-0 w-full max-w-md mb-8"
           >
@@ -155,7 +164,7 @@ export const HeroSection = () => {
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </div>
-          </form>
+          </motion.form>
         </div>
       </div>
 
