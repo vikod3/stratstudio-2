@@ -55,8 +55,6 @@ const TestimonialSection = () => {
 
   return (
     <section className="relative z-20 w-full pt-12 pb-24 px-6 md:px-12 lg:px-24 overflow-hidden">
-      {/* Background glow effects */}
-      <div className="absolute top-32 right-40 w-32 h-32 bg-muted-foreground/40 rounded-full blur-[150px]" />
       
       <div className="w-full max-w-7xl mx-auto">
         {/* Header */}
