@@ -54,7 +54,7 @@ const TestimonialSection = () => {
   }, []);
 
   return (
-    <section className="relative z-20 w-full pt-12 pb-24 px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative z-20 w-full pt-12 pb-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-background">
       
       <div className="w-full max-w-7xl mx-auto">
         {/* Header */}
