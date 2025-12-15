@@ -80,7 +80,7 @@ const TestimonialSection = () => {
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Main Testimonial Card */}
           <motion.div 
-            className="flex-1 min-h-[400px] relative bg-gradient-testimonial rounded-2xl border border-border backdrop-blur-2xl overflow-hidden"
+            className="flex-1 min-h-[400px] relative rounded-2xl border border-border overflow-hidden"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -159,7 +159,7 @@ const TestimonialSection = () => {
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                className="flex-1 min-h-[160px] lg:min-h-[180px] bg-gradient-testimonial rounded-2xl border border-border backdrop-blur-2xl overflow-hidden"
+                className="flex-1 min-h-[160px] lg:min-h-[180px] rounded-2xl border border-border overflow-hidden"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
